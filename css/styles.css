@@ -1,0 +1,595 @@
+/* TO CREATE WATCHER: sass --watch scss/styles.scss:css/styles.css */
+@font-face {
+  font-family: "Almarai-ExtraBold";
+  src: url(../Assets/Fonts/Almarai-ExtraBold.ttf) format("trueType");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Almarai-Bold";
+  src: url(../Assets/Fonts/Almarai-Bold.ttf) format("trueType");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Almarai-Regular";
+  src: url(../Assets/Fonts/Almarai-Regular.ttf) format("trueType");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Almarai-Light";
+  src: url(../Assets/Fonts/Almarai-Light.ttf) format("trueType");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BA-Regular";
+  src: url(../Assets/Fonts/BuenosAires-Regular.ttf) format("trueType");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BA-Bold";
+  src: url(../Assets/Fonts/BuenosAires-Bold.ttf) format("trueType");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BA-Light";
+  src: url(../Assets/Fonts/BuenosAires-Light.ttf) format("trueType");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BA-ExtraBold";
+  src: url(../Assets/Fonts/BuenosAires-Black.ttf) format("trueType");
+  font-weight: 800;
+  font-style: normal;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures wrapper takes full viewport height */
+}
+
+main {
+  flex-grow: 1; /* Ensures main content grows to take available space */
+}
+
+footer {
+  background-color: #F2F2F7;
+  padding: 12px 0;
+  text-align: center;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+}
+header .logo img {
+  height: clamp(30px, 4vw, 50px);
+  margin-right: 10px;
+}
+header nav {
+  flex-grow: 1; /* Makes the nav expand to take available space */
+  text-align: center; /* Centers the navigation items */
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center; /* Centers the nav items within the nav */
+}
+header nav ul li {
+  margin: 0 2%; /* Adds space between the nav items */
+}
+header nav ul li a {
+  font-family: "BA-Light", sans-serif;
+  font-size: clamp(14px, 1.5vw, 24px);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #3B3B3B;
+}
+@media (max-width: 768px) {
+  header .nav {
+    display: none;
+  }
+}
+header .auth-buttons {
+  display: flex;
+  align-items: center;
+}
+header .auth-buttons a {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(12px, 1.4vw, 20px);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  margin-left: 0.6em;
+}
+header .auth-buttons a.sign-in {
+  color: #3B3B3B;
+  background-color: transparent;
+  padding: 8px 5px;
+}
+header .auth-buttons a.register {
+  color: #ffffff;
+  background-color: #5795A7;
+}
+header .auth-buttons .menu {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+}
+header .auth-buttons .menu span {
+  width: 25px;
+  height: 4px;
+  background-color: #3B3B3B;
+  margin: 2px 0;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  header .auth-buttons .menu {
+    display: flex;
+  }
+}
+
+footer {
+  background-color: #F2F2F7;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 1000;
+}
+footer .footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .footer-content .footer-logo img {
+  height: 40px;
+}
+footer .footer-content .footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+footer .footer-content .footer-nav ul li {
+  margin-left: 30px;
+}
+footer .footer-content .footer-nav ul li a {
+  font-family: "BA-Light", sans-serif;
+  font-size: clamp(12px, 1.3vw, 20px);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #3B3B3B;
+}
+@media (max-width: 768px) {
+  footer .footer-content .footer-nav ul .nav-item {
+    display: none;
+  }
+}
+
+#hero {
+  padding: 0px 0px;
+  height: 50vw;
+  min-height: 400px;
+  background-color: transparent;
+  z-index: -2;
+  overflow: visible;
+}
+#hero .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+}
+#hero .container .hero-content {
+  color: #3B3B3B;
+  flex: 1;
+  background-color: transparent;
+  text-align: center;
+  min-width: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  z-index: 2; /* Ensure content stays above the image */
+}
+#hero .container .hero-content h2 {
+  font-family: "BA-ExtraBold", sans-serif;
+  max-width: 600px;
+  font-size: clamp(24px, 3vw, 48px);
+  margin-bottom: 0px;
+}
+#hero .container .hero-content p {
+  font-family: "BA-Light", sans-serif;
+  max-width: 600px;
+  font-size: clamp(14px, 1.5vw, 32px);
+  margin-bottom: 7%;
+  margin-top: 0px;
+}
+#hero .container .hero-content .dot-separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7%;
+  margin-top: 7%;
+}
+#hero .container .hero-content .dot-separator .dot {
+  width: clamp(8px, 1.5vw, 16px);
+  height: clamp(8px, 1.5vw, 16px);
+  background-color: #5795A7;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+#hero .container .hero-content .cta-buttons {
+  text-align: center;
+}
+#hero .container .hero-content .cta-buttons .btn {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(12px, 1.3vw, 24px);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin-left: clamp(8px, 1.2vw, 12px);
+  color: #3B3B3B;
+}
+#hero .container .hero-content .cta-buttons .btn.btn-secondary {
+  background-color: #5795A7;
+  color: #ffffff;
+  padding: 6px clamp(15px, 1.6vw, 20px);
+}
+#hero .container .hero-image {
+  flex: 1;
+  position: relative;
+  overflow: visible;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; /* Center the image vertically within the container */
+  height: 100%;
+}
+#hero .container .hero-image img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 115%;
+  width: auto;
+  object-fit: cover;
+  opacity: 70%;
+  margin-left: -50vw;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  #hero .container .hero-image img {
+    margin-right: -100px;
+  }
+  #hero .container .hero-content {
+    flex-basis: 100%;
+    padding: 0px 10%;
+  }
+}
+
+#why-chambers {
+  background-color: #F2F2F7;
+  height: auto;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#why-chambers .section-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center; /* Center-align the text */
+  margin-bottom: 50px; /* Space between title and the reasons boxes */
+}
+#why-chambers .section-title .Filo-logo {
+  margin-right: calc(15vw - 20px);
+  flex-basis: 10vw;
+}
+#why-chambers .section-title .Filo-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  opacity: 50%;
+}
+#why-chambers .section-title h3 {
+  line-height: 1.3;
+  flex-basis: 50vw;
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(24px, 3vw, 48px);
+  margin: 0;
+  text-align: center;
+}
+#why-chambers .reasons {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: clamp(14px, 1.5vw, 32px);
+}
+#why-chambers .reasons .reason {
+  flex-grow: 1;
+  background-color: #ffffff;
+  min-width: 200px;
+  max-width: 400px;
+  padding-left: 20px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+#why-chambers .reasons .reason h4 {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(22px, 2.2vw, 40px);
+  color: #5795A7;
+  margin-bottom: 20px;
+}
+#why-chambers .reasons .reason p {
+  font-family: "BA-Light", sans-serif;
+  font-size: clamp(16px, 1.5vw, 32px);
+  color: #3B3B3B;
+}
+@media (max-width: 768px) {
+  #why-chambers .reasons {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+#benefits {
+  background-color: #ffffff;
+  padding: 30px 0;
+}
+#benefits .benefits-layout {
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+}
+#benefits .benefits-layout .benefits-title {
+  font-family: "BA-ExtraBold", sans-serif;
+  flex: 1;
+  text-align: center;
+  padding-right: 50px;
+  padding-left: 40px;
+}
+#benefits .benefits-layout .benefits-title h3 {
+  font-size: clamp(20px, 2.8vw, 44px);
+  margin-bottom: 20px;
+}
+#benefits .benefits-layout .benefits-list {
+  flex: 2.2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  text-align: left;
+  padding-right: 20px;
+}
+#benefits .benefits-layout .benefits-list .benefit {
+  padding: 0px;
+  display: flex;
+  justify-content: flex-start;
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-number {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(14px, 1.5vw, 32px);
+  color: #ffffff;
+  margin-right: clamp(20px, 2vw, 40px);
+  background-color: #5795A7;
+  width: clamp(30px, 4vw, 80px);
+  height: clamp(30px, 4vw, 80px);
+  display: flex;
+  flex-shrink: 0; /* Prevent shrinking of the square */
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transform: rotate(45deg); /* Rotate the square by 45 degrees to make it a diamond */
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-number span {
+  transform: rotate(-45deg); /* Rotate the text back to normal */
+  display: block;
+}
+#benefits .benefits-layout .benefits-list .benefit #one {
+  background-color: #3B3B3B;
+}
+#benefits .benefits-layout .benefits-list .benefit #two {
+  background-color: #1E566C;
+}
+#benefits .benefits-layout .benefits-list .benefit #three {
+  background-color: #5795A7;
+}
+#benefits .benefits-layout .benefits-list .benefit #four {
+  background-color: #79BEC3;
+}
+#benefits .benefits-layout .benefits-list .benefit #benefit-one {
+  color: #3B3B3B;
+}
+#benefits .benefits-layout .benefits-list .benefit #benefit-two {
+  color: #1E566C;
+}
+#benefits .benefits-layout .benefits-list .benefit #benefit-three {
+  color: #5795A7;
+}
+#benefits .benefits-layout .benefits-list .benefit #benefit-four {
+  color: #79BEC3;
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-content h4 {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: clamp(18px, 2vw, 32px);
+  color: #5795A7;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  height: clamp(30px, 4vw, 80px);
+  align-content: center;
+}
+#benefits .benefits-layout .benefits-list .benefit .benefit-content p {
+  font-family: "BA-Light", sans-serif;
+  font-size: clamp(15px, 1.6vw, 26px);
+  color: #3B3B3B;
+}
+@media (max-width: 768px) {
+  #benefits .benefits-layout .benefits-list {
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 20px;
+  }
+  #benefits .benefits-layout .benefits-title {
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 768px) {
+  #benefits .benefits-layout {
+    flex-direction: column;
+    padding: 0px;
+  }
+}
+
+main {
+  position: relative;
+  height: calc(100vh - 130px);
+}
+main .contact-section {
+  position: relative;
+  align-items: center;
+  height: 100%;
+}
+main .contact-section .contact-content {
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  z-index: 1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 200px;
+  max-width: 500px;
+}
+main .contact-section .contact-content h2 {
+  font-family: "BA-ExtraBold", sans-serif;
+  font-size: 1.5rem;
+  color: #3B3B3B;
+  margin-bottom: 0px;
+  text-align: center;
+}
+main .contact-section .contact-content p {
+  font-family: "BA-Light", sans-serif;
+  font-size: 1rem;
+  color: #3B3B3B;
+  margin-bottom: 10px;
+  text-align: center;
+}
+main .contact-section .contact-content .contact-form {
+  display: block;
+  text-align: center;
+}
+main .contact-section .contact-content .contact-form input,
+main .contact-section .contact-content .contact-form textarea {
+  width: 100%;
+  padding: 5px 8px;
+  margin-top: 7px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "BA-Light", sans-serif;
+  background-color: #F2F2F7;
+}
+main .contact-section .contact-content .contact-form .btn {
+  margin-top: 10px;
+  width: 30%;
+  padding: 5px;
+  background-color: #1E566C;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+main .contact-section .contact-content .contact-form .btn:hover {
+  background-color: #5795A7;
+}
+main .contact-section .contact-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+main .contact-section .contact-image img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  opacity: 100%;
+}
+@media (max-width: 768px) {
+  main .contact-section .contact-content {
+    width: 90%;
+  }
+}
+
+body {
+  font-family: "BA-Light", sans-serif;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #3B3B3B;
+  overflow-x: hidden; /* Prevent horizontal scrolling on the body */
+}
+
+/*# sourceMappingURL=styles.css.map */

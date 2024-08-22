@@ -1,0 +1,314 @@
+
+#hero {
+    padding: 0px 0px;
+    height: 50vw;
+    min-height: 400px;
+    background-color: transparent;
+    z-index: -2;
+    overflow: visible;
+
+    .container  {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+
+        .hero-content {
+            color: $grey-dark-color;
+            flex: 1;
+            background-color: transparent;
+            text-align: center;
+            min-width: 0px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            flex-grow: 1;
+            z-index: 2; /* Ensure content stays above the image */
+
+
+            h2 {
+                font-family: $Font-bold;
+                max-width: 600px;
+                font-size: $Font-size-l;
+                margin-bottom: 0px;
+            }
+        
+            p {
+                font-family: $Font-regular;
+                max-width: 600px;
+                font-size: $Font-size-m;
+                margin-bottom: 7%;
+                margin-top: 0px;
+            }
+
+            .dot-separator {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 7%;
+                margin-top: 7%;
+        
+                .dot {
+                    width: clamp(8px, 1.5vw, 16px);
+                    height: clamp(8px, 1.5vw, 16px);
+                    background-color: $Teal-medium-color;
+                    border-radius: 50%;
+                    margin: 0 5px;
+                }
+            }
+
+            .cta-buttons {
+                text-align: center;
+                .btn {
+                    font-family: $Font-bold;
+                    font-size: $Font-size-s;
+                    letter-spacing: 0.5px;
+                    text-decoration: none;
+                    padding: 5px 5px;
+                    border-radius: 5px;
+                    margin-left: clamp(8px, 1.2vw, 12px);
+                    color: $grey-dark-color;
+
+                    &.btn-secondary {
+                        background-color: $Teal-medium-color;
+                        color: $background-color;
+                        padding: 6px clamp(15px, 1.6vw, 20px);
+                    }
+                }
+            }
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            overflow: visible;
+            background-color: transparent;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center; /* Center the image vertically within the container */
+            height: 100%;
+            
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 115%;
+                width: auto;
+                object-fit: cover;
+                opacity: 70%;
+                margin-left: -50vw;
+                z-index: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-image img {
+                margin-right: -100px;
+            }
+            .hero-content {
+                flex-basis: 100%;
+                padding: 0px 10%;
+            }
+        }
+    }
+}
+
+#why-chambers {
+    background-color: $grey-light-color;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center; /* Center-align the text */
+        margin-bottom: 50px; /* Space between title and the reasons boxes */
+
+        .Filo-logo {
+            margin-right: calc(15vw - 20px);
+            flex-basis: 10vw;
+            img {
+                max-height: 100%;
+                max-width: 100%;
+                
+                opacity: 50%;
+            }
+        }
+
+        h3 {
+            line-height: 1.3;
+            flex-basis: 50vw;
+            font-family: $Font-bold;
+            font-size: $Font-size-l;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .reasons {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: $Font-size-m;
+
+        .reason {
+            flex-grow: 1;
+            background-color: $background-color;
+            min-width: 200px;
+            max-width: 400px;
+            padding-left: 20px;
+            padding-right: 15px;
+            padding-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content:start;
+            align-items: start;
+
+            h4 {
+                font-family: $Font-bold;
+                font-size: clamp(22px, 2.2vw, 40px);
+                color: $Teal-medium-color;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-family: $Font-regular;
+                font-size: clamp(16px, 1.5vw, 32px);
+                color: $grey-dark-color;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .reasons {
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}
+
+#benefits {
+    background-color: $background-color;
+    padding: 30px 0;
+
+    .benefits-layout {
+        display: flex;
+        align-items: center;
+        padding: 30px 0;
+
+        .benefits-title {
+            font-family: $Font-bold;
+            flex: 1;
+            text-align: center;
+            padding-right: 50px;
+            padding-left: 40px;
+
+            h3 {
+                font-size: clamp(20px, 2.8vw, 44px);
+                margin-bottom: 20px;
+            }
+        }
+
+        .benefits-list {
+            flex: 2.2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            text-align: left;
+            padding-right: 20px;
+
+            .benefit {
+                padding: 0px;
+                display: flex;
+                justify-content: flex-start;
+
+                .benefit-number {
+                    font-family: $Font-bold;
+                    font-size: $Font-size-m;
+                    color: $background-color;
+                    margin-right: clamp(20px, 2.0vw, 40px);
+                    background-color: $Teal-medium-color;
+                    width: clamp(30px, 4.0vw, 80px);
+                    height: clamp(30px, 4.0vw, 80px);
+                    display: flex;
+                    flex-shrink: 0; /* Prevent shrinking of the square */
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 5px;
+                    transform: rotate(45deg); /* Rotate the square by 45 degrees to make it a diamond */
+                }
+
+                .benefit-number span {
+                    transform: rotate(-45deg); /* Rotate the text back to normal */
+                    display: block /* Ensure the span behaves like a block-level element */
+                }
+
+                #one { background-color: $grey-dark-color; }
+                #two { background-color: $Teal-dark-color; }
+                #three { background-color: $Teal-medium-color; }
+                #four { background-color: $Teal-light-color; }
+                #benefit-one {color: $grey-dark-color; }
+                #benefit-two {color: $Teal-dark-color; }
+                #benefit-three {color: $Teal-medium-color; }
+                #benefit-four {color: $Teal-light-color; }
+
+                .benefit-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    height: 100%;
+
+                    h4 {
+                        font-family: $Font-bold;
+                        font-size: clamp(18px, 2.0vw, 32px);
+                        color: $Teal-medium-color;
+                        margin-bottom: 0px;
+                        margin-top: 0px;
+                        height: clamp(30px, 4.0vw, 80px);
+                        align-content: center;
+                    }
+
+                    p {
+                        font-family: $Font-regular;
+                        font-size: clamp(15px, 1.6vw, 26px);
+                        color: $grey-dark-color;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            .benefits-list {
+                grid-template-columns: repeat(1, 1fr);
+                padding-left: 10%;
+                padding-right: 10%;
+                gap: 20px;
+            }
+
+            .benefits-title {
+                padding-bottom: 30px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .benefits-layout {
+            flex-direction: column;
+            padding: 0px;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    background-color: $background-color;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures wrapper takes full viewport height */
+}
+
+main {
+    flex-grow: 1; /* Ensures main content grows to take available space */
+}
+
+footer {
+    background-color: $grey-light-color;
+    padding: 12px 0;
+    text-align: center;
+}

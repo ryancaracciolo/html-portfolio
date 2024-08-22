@@ -1,0 +1,98 @@
+header {
+    background-color: $background-color;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: clamp(30px, 4vw, 50px);
+            margin-right: 10px;
+        }
+    }
+
+    nav {
+        flex-grow: 1; /* Makes the nav expand to take available space */
+        text-align: center; /* Centers the navigation items */
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: center; /* Centers the nav items within the nav */
+            li {
+                margin: 0 2%; /* Adds space between the nav items */
+                a {
+                    font-family: $Font-regular;
+                    font-size: clamp(14px, 1.5vw, 24px);
+                    letter-spacing: 0.5px;
+                    text-decoration: none;
+                    color: $grey-dark-color;
+                    }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .nav {
+          display: none;
+        }
+    }
+
+    .auth-buttons {
+        display: flex;
+        align-items: center;
+
+        a {
+            font-family: $Font-bold;
+            font-size: clamp(12px, 1.4vw, 20px);
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 0.3em;
+            margin-left: 0.6em;
+
+            &.sign-in {
+                color: $grey-dark-color;
+                background-color: transparent;
+                padding: 8px 5px;
+            }
+
+            &.register {
+                color: $background-color;
+                background-color: $Teal-medium-color;
+            }
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer;
+
+            span {
+                width: 25px;
+                height: 4px;
+                background-color: $grey-dark-color;
+                margin: 2px 0;
+                margin-left: 15px;
+                border-radius: 5px;
+            }         
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: flex;
+            }
+        }
+    }
+}
